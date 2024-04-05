@@ -15,6 +15,6 @@ RSpec describe Board do
     end
 
     it 'only contains unplayed cells' do
-        expect(@board_1.cells.status).to all eq(".")
+        expect(@board_1.cells.state).to all eq(:unplayed)
     end
 end
