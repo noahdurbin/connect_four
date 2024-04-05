@@ -9,5 +9,4 @@ RSpec describe Cell do
     it 'starts as an unplayed cell' do
 
     end
-
 end
