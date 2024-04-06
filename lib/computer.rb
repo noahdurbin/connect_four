@@ -33,13 +33,10 @@ class Computer
           @board.f_column.find do |cell|
             cell.change_state("O")
           end
-        elsif column == "G"
+        else column == "G"
           @board.g_column.find do |cell|
             cell.change_state("O")
           end
-        else
-          "Invalid Input"
-          #run the get input method again
         end
       end
 end
