@@ -5,12 +5,13 @@ require './player.rb'
 require './game.rb'
 require 'pry'
 
-print "=================================" + "\n" 
-print "        Play Connect IV " + "\n" 
-print "=================================" + "\n"
-print "ABCDEFG" + "\n"
+# print "=================================" + "\n" 
+# print "        Play Connect IV " + "\n" 
+# print "=================================" + "\n"
+# print "ABCDEFG" + "\n"
 
 game = Game.new
+game.start_game
 binding.pry
 print board.display_board
 
