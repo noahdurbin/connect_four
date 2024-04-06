@@ -13,4 +13,11 @@ RSpec.describe Cell do
 
         expect(cell_1.state).to eq(".")
     end
+
+    it 'can change state to an X or O' do 
+        cell_1 = Cell.new({location: 'A1', state: "."})
+        cell_1.change_state
+
+        expect(cell_1.state).to eq("X")
+    end
 end
