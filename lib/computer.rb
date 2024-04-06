@@ -9,8 +9,8 @@ class Computer
     end
 
     def place_piece(column)
-        if column == "A"
-          @board.a_column.find do |cell|
+        if column == "A" 
+          @board.b_column.find do |cell|
             cell.change_state("O")
           end
         elsif column == "B"
@@ -38,7 +38,7 @@ class Computer
             cell.change_state("O")
           end
         else
-          "Invalid Input"
+          "Kats Game!"
           #run the get input method again
         end
       end
