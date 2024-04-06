@@ -1,5 +1,5 @@
 class Cell
-  attr_reader :state
+  attr_accessor :state
 
   def initialize (cell_details)
     @location = cell_details[:location]
@@ -10,4 +10,9 @@ class Cell
     self.state
   end
 
+  def change_state
+    if self.state == "."
+      self.state = "X"
+    end
+  end
 end

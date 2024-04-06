@@ -1,5 +1,6 @@
 require './board.rb'
 require './cell.rb'
+require 'pry'
 
 print "=================================" + "\n" 
 print "        Play Connect IV " + "\n" 

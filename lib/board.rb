@@ -50,15 +50,17 @@ class Board
       @g4 = Cell.new({location: 'g4', state: "."})
       @g5 = Cell.new({location: 'g5', state: "."})
       @g6 = Cell.new({location: 'g6', state: "."})
+      @a_column = [@a6, @a5, @a4, @a3, @a2, @a1]
+      @b_column = [@b6, @b5, @b4, @b3, @b2, @b1]
+      @c_column = [@c6, @c5, @c4, @c3, @c2, @c1]
+      @d_column = [@d6, @d5, @d4, @d3, @d2, @d1]
+      @e_column = [@e6, @e5, @e4, @e3, @e2, @e1]
+      @f_column = [@f6, @f5, @f4, @f3, @f2, @f1]
+      @g_column = [@g6, @g5, @g4, @g3, @g2, @g1]
   end
 
-  a_column = [@a6, @a5, @a4, @a3, @a2, @a1]
-  b_column = [@b6, @b5, @b4, @b3, @b2, @b1]
-  c_column = [@c6, @c5, @c4, @c3, @c2, @c1]
-  d_column = [@d6, @d5, @d4, @d3, @d2, @d1]
-  e_column = [@e6, @e5, @e4, @e3, @e2, @e1]
-  f_column = [@f6, @f5, @f4, @f3, @f2, @f1]
-  g_column = [@g6, @g5, @g4, @g3, @g2, @g1]
+  # @a_column = [@a6, @a5, @a4, @a3, @a2, @a1]
+  
 
   def display_board
     a1.render + b1.render + c1.render + d1.render + e1.render + f1.render + g1.render + "\n" +
@@ -67,5 +69,40 @@ class Board
     a4.render + b4.render + c4.render + d4.render + e4.render + f4.render + g4.render + "\n" +
     a5.render + b5.render + c5.render + d5.render + e5.render + f5.render + g5.render + "\n" +
     a6.render + b6.render + c6.render + d6.render + e6.render + f6.render + g6.render
+  end
+
+  def choose_piece(column)
+    if column == "A"
+      @a_column.find do |cell|
+        cell.change_state
+      end
+    elsif column == "B"
+      @b_column.find do |cell|
+        cell.change_state
+      end
+    elsif column == "C"
+      @c_column.find do |cell|
+        cell.change_state
+      end
+    elsif column == "D"
+      @d_column.find do |cell|
+        cell.change_state
+      end
+    elsif column == "E"
+      @e_column.find do |cell|
+        cell.change_state
+      end
+    elsif column == "F"
+      @f_column.find do |cell|
+        cell.change_state
+      end
+    elsif column == "G"
+      @g_column.find do |cell|
+        cell.change_state
+      end
+    else
+      "Invalid Input"
+      #run the get input method again
+    end
   end
 end
