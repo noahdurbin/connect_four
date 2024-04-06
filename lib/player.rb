@@ -34,12 +34,12 @@ class Player
         cell.change_state("X")
       end
     else
-      "Invalid Input"
+      puts "Invalid Selection, please select a character A - G"
+      invalid_selection
     end
   end
 
   def invalid_selection
-    "Invalid Selection, please select a character A - G"
     player.place_piece(gets.chomp)
   end
 end

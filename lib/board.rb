@@ -63,6 +63,7 @@ class Board
   end
 
   def display_board
+    puts 'ABCDEFG' + "\n" +
     a1.render + b1.render + c1.render + d1.render + e1.render + f1.render + g1.render + "\n" +
     a2.render + b2.render + c2.render + d2.render + e2.render + f2.render + g2.render + "\n" +
     a3.render + b3.render + c3.render + d3.render + e3.render + f3.render + g3.render + "\n" +

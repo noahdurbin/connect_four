@@ -1,6 +1,7 @@
 require './board.rb'
 require './cell.rb'
 require './computer.rb'
+require './game.rb'
 require 'pry'
 
 print "=================================" + "\n" 
