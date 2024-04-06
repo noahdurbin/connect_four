@@ -12,3 +12,4 @@ board = Board.new
 binding.pry
 print board.display_board
 
+player.place_piece(gets.chomp)
