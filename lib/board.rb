@@ -52,6 +52,8 @@ class Board
       @g6 = Cell.new({location: 'g6', state: "."})
   end
 
+  a_column = [@a6, @a5, @a4, @a3, @a2, @a1]
+
   def display_board
     a1.render + b1.render + c1.render + d1.render + e1.render + f1.render + g1.render + "\n" +
     a2.render + b2.render + c2.render + d2.render + e2.render + f2.render + g2.render + "\n" +

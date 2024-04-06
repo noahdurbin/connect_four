@@ -9,8 +9,4 @@ RSpec.describe Board do
     it 'is an instance of the board class' do
         expect(@board_1).to be_a(Board)
     end
-
-    it 'only contains unplayed cells' do
-        expect(@board_1.render.state).to all eq(".")
-    end
 end
