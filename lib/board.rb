@@ -71,38 +71,38 @@ class Board
     a6.render + b6.render + c6.render + d6.render + e6.render + f6.render + g6.render
   end
 
-  def choose_piece(column)
-    if column == "A"
-      @a_column.find do |cell|
-        cell.change_state
-      end
-    elsif column == "B"
-      @b_column.find do |cell|
-        cell.change_state
-      end
-    elsif column == "C"
-      @c_column.find do |cell|
-        cell.change_state
-      end
-    elsif column == "D"
-      @d_column.find do |cell|
-        cell.change_state
-      end
-    elsif column == "E"
-      @e_column.find do |cell|
-        cell.change_state
-      end
-    elsif column == "F"
-      @f_column.find do |cell|
-        cell.change_state
-      end
-    elsif column == "G"
-      @g_column.find do |cell|
-        cell.change_state
-      end
-    else
-      "Invalid Input"
-      #run the get input method again
-    end
-  end
+  # def choose_piece(column)
+  #   if column == "A"
+  #     @a_column.find do |cell|
+  #       cell.change_state
+  #     end
+  #   elsif column == "B"
+  #     @b_column.find do |cell|
+  #       cell.change_state
+  #     end
+  #   elsif column == "C"
+  #     @c_column.find do |cell|
+  #       cell.change_state
+  #     end
+  #   elsif column == "D"
+  #     @d_column.find do |cell|
+  #       cell.change_state
+  #     end
+  #   elsif column == "E"
+  #     @e_column.find do |cell|
+  #       cell.change_state
+  #     end
+  #   elsif column == "F"
+  #     @f_column.find do |cell|
+  #       cell.change_state
+  #     end
+  #   elsif column == "G"
+  #     @g_column.find do |cell|
+  #       cell.change_state
+  #     end
+  #   else
+  #     "Invalid Input"
+  #     #run the get input method again
+  #   end
+  # end
 end
