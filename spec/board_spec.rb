@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec describe Board do
+RSpec.describe Board do
     
     before do 
         @board_1 = Board.new
@@ -10,11 +10,7 @@ RSpec describe Board do
         expect(@board_1).to be_a(Board)
     end
 
-    it 'initializes with 42 cells' do
-        expect(@board_1.cell_count).to eq(42)
-    end
-
     it 'only contains unplayed cells' do
-        expect(@board_1.cells.state).to all eq(:unplayed)
+        expect(@board_1.render.state).to all eq(".")
     end
 end

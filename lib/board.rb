@@ -1,5 +1,11 @@
 class Board
-attr_reader :a1, :a2, :a3, :a4, :a5, :a6
+  attr_reader :a1, :a2, :a3, :a4, :a5, :a6,
+              :b1, :b2, :b3, :b4, :b5, :b6, 
+              :c1, :c2, :c3, :c4, :c5, :c6, 
+              :d1, :d2, :d3, :d4, :d5, :d6, 
+              :e1, :e2, :e3, :e4, :e5, :e6, 
+              :f1, :f2, :f3, :f4, :f5, :f6, 
+              :g1, :g2, :g3, :g4, :g5, :g6
 
   def initialize
       @a1 = Cell.new({location: 'A1', state: "."})
@@ -46,24 +52,12 @@ attr_reader :a1, :a2, :a3, :a4, :a5, :a6
       @g6 = Cell.new({location: 'g6', state: "."})
   end
 
-
-
-
-
-
-
-
-
-
-
-
+  def display_board
+    a1.render + b1.render + c1.render + d1.render + e1.render + f1.render + g1.render + "\n" +
+    a2.render + b2.render + c2.render + d2.render + e2.render + f2.render + g2.render + "\n" +
+    a3.render + b3.render + c3.render + d3.render + e3.render + f3.render + g3.render + "\n" +
+    a4.render + b4.render + c4.render + d4.render + e4.render + f4.render + g4.render + "\n" +
+    a5.render + b5.render + c5.render + d5.render + e5.render + f5.render + g5.render + "\n" +
+    a6.render + b6.render + c6.render + d6.render + e6.render + f6.render + g6.render
   end
-
-
-
-  # def cell_count
-  #   @board.count
-  # end
-
-  
 end
