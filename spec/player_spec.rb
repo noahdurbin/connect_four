@@ -6,10 +6,10 @@ RSpec.describe Cell do
     board = Board.new
     player = Player.new(board)
     
-    expected(player).to be_a(Player)
+    expect(player).to be_a(Player)
   end
 
-  
+
 
 
 
