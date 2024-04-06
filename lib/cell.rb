@@ -10,9 +10,9 @@ class Cell
     self.state
   end
 
-  def change_state
+  def change_state(piece)
     if self.state == "."
-      self.state = "X"
+      self.state = piece
     end
   end
 end

@@ -5,7 +5,10 @@ class Board
               :d1, :d2, :d3, :d4, :d5, :d6, 
               :e1, :e2, :e3, :e4, :e5, :e6, 
               :f1, :f2, :f3, :f4, :f5, :f6, 
-              :g1, :g2, :g3, :g4, :g5, :g6
+              :g1, :g2, :g3, :g4, :g5, :g6,
+              :a_column, :b_column, :c_column,
+              :d_column, :e_column, :f_column,
+              :g_column
 
   def initialize
       @a1 = Cell.new({location: 'A1', state: "."})
@@ -58,9 +61,6 @@ class Board
       @f_column = [@f6, @f5, @f4, @f3, @f2, @f1]
       @g_column = [@g6, @g5, @g4, @g3, @g2, @g1]
   end
-
-  # @a_column = [@a6, @a5, @a4, @a3, @a2, @a1]
-  
 
   def display_board
     a1.render + b1.render + c1.render + d1.render + e1.render + f1.render + g1.render + "\n" +
