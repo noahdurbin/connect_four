@@ -2,8 +2,8 @@ require 'spec_helper'
 
 RSpec.describe Game do
     it "initializes" do
-        game = Game.new
+        game_1 = Game.new
         
-        expect(game).to be_a(Game)
+        expect(game_1).to be_a(Game)
     end
 end
