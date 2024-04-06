@@ -53,6 +53,12 @@ class Board
   end
 
   a_column = [@a6, @a5, @a4, @a3, @a2, @a1]
+  b_column = [@b6, @b5, @b4, @b3, @b2, @b1]
+  c_column = [@c6, @c5, @c4, @c3, @c2, @c1]
+  d_column = [@d6, @d5, @d4, @d3, @d2, @d1]
+  e_column = [@e6, @e5, @e4, @e3, @e2, @e1]
+  f_column = [@f6, @f5, @f4, @f3, @f2, @f1]
+  g_column = [@g6, @g5, @g4, @g3, @g2, @g1]
 
   def display_board
     a1.render + b1.render + c1.render + d1.render + e1.render + f1.render + g1.render + "\n" +
