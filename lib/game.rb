@@ -17,8 +17,13 @@ class Game
     end
 
     def prompt_player
-      print "Select a column A - G: "
-      gets.chomp
+      input = " "
+      until input == "A" || input == "B" || 
+            input == "C" || input == "D" || 
+            input == "E" || input == "F" || 
+            input == "G"
+        print "Select a column A - G: "
+        input = gets.chomp
+      end
     end
-    
 end
