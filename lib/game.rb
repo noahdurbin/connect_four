@@ -16,6 +16,10 @@ class Game
         print @board.display_board
     end
 
+    def next_round
+      print @board.display_board
+    end
+
     def prompt_player
       input = " "
       until input == "A" || input == "B" || 
@@ -25,5 +29,6 @@ class Game
         print "Select a column A - G: "
         input = gets.chomp
       end
+      input
     end
 end

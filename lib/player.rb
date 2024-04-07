@@ -4,10 +4,6 @@ class Player
     @board = board
   end
 
-  # def prompt_player
-  #   @input = gets.chomp
-  # end
-
   def place_piece(column)
     if column == "A"
       @board.a_column.find do |cell|
@@ -38,12 +34,12 @@ class Player
         cell.change_state("X")
       end
     else
-      puts "Invalid Selection, please select a character A - G"
-      invalid_selection
+      # puts "Invalid Selection, please select a character A - G"
+      # invalid_selection
     end
   end
 
-  def invalid_selection
-    player.place_piece(gets.chomp)
-  end
+  # def invalid_selection
+  #   player.place_piece(gets.chomp)
+  # end
 end
