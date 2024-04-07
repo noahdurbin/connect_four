@@ -4,6 +4,10 @@ class Player
     @board = board
   end
 
+  # def prompt_player
+  #   @input = gets.chomp
+  # end
+
   def place_piece(column)
     if column == "A"
       @board.a_column.find do |cell|

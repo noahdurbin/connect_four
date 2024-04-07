@@ -39,7 +39,6 @@ class Computer
       end
     else
       nil
-      #run the get input method again
     end
   end
 end

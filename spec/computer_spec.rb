@@ -8,4 +8,6 @@ RSpec.describe Computer do
         
         expect(board.a6.state).to eq("O")
     end
+
+    
 end
