@@ -10,7 +10,7 @@ class Computer
 
   def place_piece(column)
     if column == "A" 
-      @board.b_column.find do |cell|
+      @board.a_column.find do |cell|
         cell.change_state("O")
       end
     elsif column == "B"
