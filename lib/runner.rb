@@ -1,8 +1,8 @@
-require './board.rb'
-require './cell.rb'
-require './computer.rb'
-require './player.rb'
-require './game.rb'
+require_relative './board.rb'
+require_relative './cell.rb'
+require_relative './computer.rb'
+require_relative './player.rb'
+require_relative './game.rb'
 require 'pry'
 
 # print "=================================" + "\n" 
@@ -12,7 +12,13 @@ require 'pry'
 
 game = Game.new
 game.start_game
-binding.pry
-print board.display_board
+# binding.pry
+#print @board.display_board
+player_input = game.prompt_player
+game.player.place_piece(player_input) #play X
+computer_input = game.computer.random_column
+game.computer.place_piece(computer_input) # play O
 
-player.place_piece(gets.chomp)
+game.next_round
+
+player_input2 = game.prompt_player

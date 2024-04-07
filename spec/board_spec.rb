@@ -10,7 +10,10 @@ RSpec.describe Board do
         expect(@board_1).to be_a(Board)
     end
 
-    it 'chooses the lowest cell in a column' do
+
+# I think we can delete this test?
+# covered in player_spec and computer_spec
+    xit 'chooses the lowest cell in a column' do
         @board_1.choose_piece("A")
         expect(@board_1.a6.state).to eq("X")
 
