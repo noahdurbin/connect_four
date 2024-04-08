@@ -31,4 +31,29 @@ class Game
       end
       input
     end
+
+    def check_columns
+        self.columns_into_strings.map do |column|
+            if column.include?("xxxx")
+                "player wins"
+            elsif column.include("OOOO")
+                "computer wins"
+            else
+                nil
+            end
+        end
+    end
+    
+    def columns_into_strings
+        columns = [@a_column, @b_column, @c_column, @d_column, @e_column, @f_column, @g_column]
+        columns.map do |column|
+            cell_states = []
+            column.each do |cell|
+                cell_states << cell.state
+            end
+            cell_states.map do |column|
+                column.join("")
+            end
+        end
+    end
 end
