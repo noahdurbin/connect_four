@@ -60,7 +60,15 @@ class Board
       @e_column = [@e6, @e5, @e4, @e3, @e2, @e1]
       @f_column = [@f6, @f5, @f4, @f3, @f2, @f1]
       @g_column = [@g6, @g5, @g4, @g3, @g2, @g1]
-  end
+      @row_1 = [@a1, @b1, @c1, @d1, @e1, @f1, @g1]
+      @row_2 = [@a2, @b2, @c2, @d2, @e2, @f2, @g2]
+      @row_3 = [@a3, @b3, @c3, @d3, @e3, @f3, @g3]
+      @row_4 = [@a4, @b4, @c4, @d4, @e4, @f4, @g4]
+      @row_5 = [@a5, @b5, @c5, @d5, @e5, @f5, @g5]
+      @row_6 = [@a6, @b6, @c6, @d6, @e16, @f6, @g6]
+      @columns = [@a_column, @b_column, @c_column, @d_column, @e_column, @f_column, @g_column]
+      @rows = [@row_1, @row_2, @row_3, @row_4, @row_5, @row_6]
+    end
 
   def display_board
     puts '            ABCDEFG' + "\n" +
