@@ -73,7 +73,7 @@ class Board
       @row_3 = [@a3, @b3, @c3, @d3, @e3, @f3, @g3]
       @row_4 = [@a4, @b4, @c4, @d4, @e4, @f4, @g4]
       @row_5 = [@a5, @b5, @c5, @d5, @e5, @f5, @g5]
-      @row_6 = [@a6, @b6, @c6, @d6, @e16, @f6, @g6]
+      @row_6 = [@a6, @b6, @c6, @d6, @e6, @f6, @g6]
 
       @diagonal_1 = [@a3, @b4, @c5, @d6]
       @diagonal_2 = [@a2, @b3, @c4, @d5, @e6]
@@ -90,7 +90,7 @@ class Board
 
       @columns = [@a_column, @b_column, @c_column, @d_column, @e_column, @f_column, @g_column]
       @rows = [@row_1, @row_2, @row_3, @row_4, @row_5, @row_6]
-      @diagonals [@diagonal_1, @diagonal_2, @diagonal_3, @diagonal_4, @diagonal_5, @diagonal_6, @diagonal_7, @diagonal_8, @diagonal_9, @diagonal_10, @diagonal_11, @diagonal_12]
+      @diagonals = [@diagonal_1, @diagonal_2, @diagonal_3, @diagonal_4, @diagonal_5, @diagonal_6, @diagonal_7, @diagonal_8, @diagonal_9, @diagonal_10, @diagonal_11, @diagonal_12]
     end
 
   def display_board
