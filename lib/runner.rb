@@ -14,11 +14,13 @@ game = Game.new
 game.start_game
 # binding.pry
 #print @board.display_board
-player_input = game.prompt_player
-game.player.place_piece(player_input) #play X
+player_input = game.player.prompt_player
+valid_input = game.player.input_validation(player_input)
+
+game.player.place_piece(valid_input) #play X
 computer_input = game.computer.random_column
 game.computer.place_piece(computer_input) # play O
 
 game.next_round
 
-player_input2 = game.prompt_player
+# player_input2 = game.prompt_player

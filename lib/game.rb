@@ -20,15 +20,16 @@ class Game
       print @board.display_board
     end
 
-    def prompt_player
-      input = " "
-      until input == "A" || input == "B" || 
-            input == "C" || input == "D" || 
-            input == "E" || input == "F" || 
-            input == "G"
-        print "Select a column A - G: "
-        input = gets.chomp
-      end
-      input
-    end
+    # def input_validation(input)
+    #   if  input == "A" || input == "B" || 
+    #       input == "C" || input == "D" || 
+    #       input == "E" || input == "F" || 
+    #       input == "G"
+    #     return input
+    #   else
+    #     print "Invalid selection."
+    # end
+
+
+    
 end

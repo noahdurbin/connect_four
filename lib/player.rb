@@ -29,17 +29,31 @@ class Player
       @board.f_column.find do |cell|
         cell.change_state("X")
       end
-    elsif column == "G"
+    else column == "G"
       @board.g_column.find do |cell|
         cell.change_state("X")
       end
-    else
-      # puts "Invalid Selection, please select a character A - G"
-      # invalid_selection
     end
   end
 
-  # def invalid_selection
-  #   player.place_piece(gets.chomp)
-  # end
+  def prompt_player 
+    print "Select a column A - G: "
+    input = gets.chomp
+  end
+
+  def input_validation(input)
+    if input == "A" || input == "B" || input == "C" || input == "D" || input == "E" || input == "F" || input == "G"
+      return input
+    else
+      until input == "A" || input == "B" || 
+            input == "C" || input == "D" || 
+            input == "E" || input == "F" || 
+            input == "G"
+            print " Invalid Selection." + "\n"
+            print "Select a column A - G: "
+            input = gets.chomp
+      end
+    input
+    end
+  end
 end
