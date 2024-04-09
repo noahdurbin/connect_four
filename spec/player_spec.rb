@@ -25,12 +25,5 @@ RSpec.describe Player do
     expect(game_1.player.input_validation("A")).to eq("A")
   end
 
-  xit "it can determine an invalid user response" do
-    game_1 = Game.new
-    board = Board.new
-    player = Player.new
-
-    expect()
-  end
 end
 

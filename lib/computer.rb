@@ -1,51 +1,61 @@
 class Computer
+  attr_accessor :set
 
   def initialize(board)
       @board = board
+      @set = ["A", "B", "C", "D", "E", "F", "G"]
+
   end
 
   def random_column
-      ["A", "B", "C", "D", "E", "F", "G"].sample
+      @set.sample
   end
 
   def place_piece(column)
-    if  
-      @a_column = [@b6, @b5, @b4, @b3, @b2, @b1] && 
-      @c_column = [@c6, @c5, @c4, @c3, @c2, @c1] && 
-      @d_column = [@d6, @d5, @d4, @d3, @d2, @d1] && 
-      @e_column = [@e6, @e5, @e4, @e3, @e2, @e1] && 
-      @f_column = [@f6, @f5, @f4, @f3, @f2, @f1] && 
-      @g_column = [@g6, @g5, @g4, @g3, @g2, @g1]
-    if column == "A" && @board.a_column.include?(".")
+    if column == "A" && computer_check(@board.a_column) == true
       @board.a_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "B" && @board.b_column.state.include?(".")
+    elsif column == "B" && computer_check(@board.a_column) == true
       @board.b_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "C" && @board.c_column.include?(".")
+    elsif column == "C" && computer_check(@board.a_column) == true
       @board.c_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "D" && @board.d_column.include?(".")
+    elsif column == "D" && computer_check(@board.a_column) == true
       @board.d_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "E" && @board.e_column.include?(".")
+    elsif column == "E" && computer_check(@board.a_column) == true
       @board.e_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "F" && @board.f_column.include?(".")
+    elsif column == "F" && computer_check(@board.a_column) == true
       @board.f_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "G" && @board.g_column.include?(".")
+    elsif column == "G" && computer_check(@board.a_column) == true
       @board.g_column.find do |cell|
         cell.change_state("O")
       end
     else
-      print "Kats Game."
+      @set.delete(column)
     end
+  end
+end
+
+def computer_check(full_column)
+  full_column.map do |column|
+      cell_states = []
+      full_column.each do |cell|
+          cell_states.push(cell.state)
+      end
+      if cell_states.include?(".")
+        return true
+      else
+        return false
+  end
   end
 end
