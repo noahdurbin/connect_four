@@ -1,5 +1,5 @@
 class Game
-    attr_accessor :wins
+    attr_accessor :flag    attr_accessor :wins
     attr_reader :board, :computer, :player
 
     def initialize
@@ -7,8 +7,6 @@ class Game
         @computer = Computer.new(@board)
         @player = Player.new(@board)
         @input = " "
-        @wins = 0
-        @winner = nil
     end
 
     def start_game
@@ -16,25 +14,19 @@ class Game
         print "        Play Connect IV " + "\n" 
         print "=================================" + "\n"
         print @board.display_board
-        gameplay
-    end
-  
-    def gameplay
-      until @wins == 1
         print "Select a column A - G: "
-        @input = gets.chomp
-        valid_input = @player.input_validation(@input)
-        @player.place_piece(valid_input) #play
-        self.check_for_winner
-        system("clear")
-        print @board.display_board
-        system("sleep 2")
-        computer_input = computer.random_column
-        @computer.place_piece(computer_input) # play O
-        self.check_for_winner
-        system("clear")
-        print @board.display_board
-      end
+          @input = gets.chomp
+          valid_input = @player.input_validation(@input)
+          @player.place_piece(valid_input) #play X
+          computer_input = computer.random_column
+          @computer.place_piece(computer_input) # play O
+          print @board.display_board
+            
+          valid_input = @player.input_validation(gets.chomp)
+          @player.place_piece(valid_input) #play X
+          computer_input = computer.random_column
+          computer_validation = @computer.place_piece(computer_input)
+          print @board.display_board
     end
 
     def arrays_into_strings(group_of_arrays)
@@ -60,6 +52,25 @@ class Game
     end
 
     def check_for_winner
+        self.check_grouping(arrays_into_strings(@board.all))
+    end
+
+    
+  end
+
+
+
+
+  # print "Select a column A - G: "
+  #   until @flag == 1
+  #     @input = gets.chomp
+  #     valid_input = @player.input_validation(@input)
+  #     @player.place_piece(valid_input) #play X
+  #   end
+  #   computer_input = computer.random_column
+  #   @computer.place_piece(computer_input) # play O
+  #   print @board.display_board
+  # end
       check_grouping(arrays_into_strings(@board.all))
       # if @winner == nil 
       #   nil
