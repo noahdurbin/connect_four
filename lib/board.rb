@@ -14,7 +14,7 @@ class Board
               :diagonal_5, :diagonal_6, :diagonal_7,
               :diagonal_8, :diagonal_9, :diagonal_10, 
               :diagonal_11, :diagonal_12, :diagonals,
-              :rows, :columns
+              :rows, :columns, :all
 
   def initialize
       @a1 = Cell.new({location: 'A1', state: "."})
@@ -91,6 +91,11 @@ class Board
       @columns = [@a_column, @b_column, @c_column, @d_column, @e_column, @f_column, @g_column]
       @rows = [@row_1, @row_2, @row_3, @row_4, @row_5, @row_6]
       @diagonals = [@diagonal_1, @diagonal_2, @diagonal_3, @diagonal_4, @diagonal_5, @diagonal_6, @diagonal_7, @diagonal_8, @diagonal_9, @diagonal_10, @diagonal_11, @diagonal_12]
+      @all = [@diagonal_1, @diagonal_2, @diagonal_3, @diagonal_4, 
+      @diagonal_5, @diagonal_6, @diagonal_7, @diagonal_8, 
+      @diagonal_9, @diagonal_10, @diagonal_11, @diagonal_12, 
+      @row_1, @row_2, @row_3, @row_4, @row_5, @row_6, @a_column, 
+      @b_column, @c_column, @d_column, @e_column, @f_column, @g_column]
     end
 
   def display_board
