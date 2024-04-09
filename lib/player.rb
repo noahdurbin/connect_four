@@ -48,8 +48,8 @@ class Player
           print "Column is full. Make another selection: "
           input = gets.chomp
           input_validation(input)
+          return input
         end
-        input
       end
   end
 
