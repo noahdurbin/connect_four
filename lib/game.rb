@@ -27,11 +27,6 @@ class Game
           computer_input = computer.random_column
           computer_validation = @computer.place_piece(computer_input)
           print @board.display_board
-
-
-
-
-          
     end
         
     def arrays_into_strings(group_of_arrays)
@@ -45,7 +40,7 @@ class Game
     end
 
     def check_grouping(group)
-        group.find do |string|
+        group.each do |string|
             if string.include?("XXXX")
                 return "Game Over Player Wins"
             elsif string.include?("OOOO")
@@ -57,9 +52,7 @@ class Game
     end
 
     def check_for_winner
-        self.check_grouping(arrays_into_strings(@board.diagonals))
-        self.check_grouping(arrays_into_strings(@board.rows))
-        self.check_grouping(arrays_into_strings(@board.columns))
+        self.check_grouping(arrays_into_strings(@board.all))
     end
 
     

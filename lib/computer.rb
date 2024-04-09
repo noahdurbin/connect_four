@@ -40,6 +40,8 @@ class Computer
       @board.g_column.find do |cell|
         cell.change_state("O")
       end
+    elsif @set == []
+      "cats game"
     else
       @set.delete(column)
     end

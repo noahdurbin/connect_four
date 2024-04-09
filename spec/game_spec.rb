@@ -45,8 +45,8 @@ RSpec.describe Game do
         game.player.place_piece("C")
         game.player.place_piece("C")
         game.player.place_piece("C")
-        game.player.place_piece("D")
-        game.player.place_piece("D")
+        game.computer.place_piece("D")
+        game.computer.place_piece("D")
         game.player.place_piece("D")
         game.player.place_piece("D")
 
