@@ -5,35 +5,52 @@ class Player
   end
 
   def place_piece(column)
-    if column == "A"
+    if column == "A" && player_check(@board.a_column) == true
       @board.a_column.find do |cell|
         cell.change_state("X")
       end
-    elsif column == "B"
+    elsif column == "B" && player_check(@board.b_column) == true
       @board.b_column.find do |cell|
         cell.change_state("X")
       end
-    elsif column == "C"
+    elsif column == "C" && player_check(@board.c_column) == true
       @board.c_column.find do |cell|
         cell.change_state("X")
       end
-    elsif column == "D"
+    elsif column == "D" && player_check(@board.d_column) == true
       @board.d_column.find do |cell|
         cell.change_state("X")
       end
-    elsif column == "E"
+    elsif column == "E" && player_check(@board.e_column) == true
       @board.e_column.find do |cell|
         cell.change_state("X")
       end
-    elsif column == "F"
+    elsif column == "F" && player_check(@board.f_column) == true
       @board.f_column.find do |cell|
         cell.change_state("X")
       end
-    else column == "G"
+    else column == "G" && player_check(@board.g_column) == true
       @board.g_column.find do |cell|
         cell.change_state("X")
       end
     end
+  end
+
+  def player_check(full_column)
+    full_column.map do |column|
+        cell_states = []
+        full_column.each do |cell|
+            cell_states.push(cell.state)
+        end
+        if cell_states.include?(".")
+          return true
+        else
+          print "Column is full. Make another selection: "
+          input = gets.chomp
+          input_validation(input)
+        end
+        input
+      end
   end
 
   def input_validation(input) #look at Range
@@ -51,4 +68,5 @@ class Player
     input
     end
   end
+
 end
