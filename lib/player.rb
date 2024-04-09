@@ -36,12 +36,7 @@ class Player
     end
   end
 
-  def prompt_player 
-    print "Select a column A - G: "
-    input = gets.chomp
-  end
-
-  def input_validation(input)
+  def input_validation(input) #look at Range
     if input == "A" || input == "B" || input == "C" || input == "D" || input == "E" || input == "F" || input == "G"
       return input
     else

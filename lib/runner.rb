@@ -5,22 +5,4 @@ require_relative './player.rb'
 require_relative './game.rb'
 require 'pry'
 
-# print "=================================" + "\n" 
-# print "        Play Connect IV " + "\n" 
-# print "=================================" + "\n"
-# print "ABCDEFG" + "\n"
-
-game = Game.new
-game.start_game
-# binding.pry
-#print @board.display_board
-player_input = game.player.prompt_player
-valid_input = game.player.input_validation(player_input)
-
-game.player.place_piece(valid_input) #play X
-computer_input = game.computer.random_column
-game.computer.place_piece(computer_input) # play O
-
-game.next_round
-
-# player_input2 = game.prompt_player
+Game.new.start_game
