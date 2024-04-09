@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Cell do
+RSpec.describe Player do
 
   it 'can initialize' do
     board = Board.new
@@ -17,4 +17,13 @@ RSpec.describe Cell do
     expect(board.a6.state).to eq("X")
   end
 
+  it "can determine a valid user response" do
+    game_1 = Game.new
+    board = Board.new
+    player = Player.new(board)
+
+    expect(game_1.player.input_validation("A")).to eq("A")
+  end
+
 end
+

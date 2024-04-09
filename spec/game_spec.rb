@@ -2,9 +2,9 @@ require 'spec_helper'
 
 RSpec.describe Game do
     it "initializes" do
-        game_1 = Game.new
+      game = Game.new
         
-        expect(game_1).to be_a(Game)
+      expect(game).to be_a(Game)
     end
 
     it "can determine if the player won is a winner" do
@@ -52,4 +52,6 @@ RSpec.describe Game do
 
         expect(game.check_for_winner).to eq("Game Over Player Wins")
     end
+
+    
 end
