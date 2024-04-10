@@ -44,10 +44,8 @@ class Game
       sleep 1.5
 
       computer_input = computer.random_column
-      computer.place_piece(computer_input) # play 
-      # check_for_winner
+      computer.place_piece(computer_input) 
       system("clear")
-      # print @board.display_board
       check_for_winner
     end
   end
@@ -87,13 +85,13 @@ class Game
     false
   end
 
-  def heading
-    system("clear")
-    print "=================================" + "\n" 
-    print "        Play Connect IV " + "\n" 
-    print "=================================" + "\n"
-    print @board.display_board
-    print "would you like to play?"
-    print "type 'Y' for yes or 'N' for no" + "\n"
-  end
+  # def heading
+  #   system("clear")
+  #   print "=================================" + "\n" 
+  #   print "        Play Connect IV " + "\n" 
+  #   print "=================================" + "\n"
+  #   print @board.display_board
+  #   print "would you like to play?"
+  #   print "type 'Y' for yes or 'N' for no" + "\n"
+  # end
 end
