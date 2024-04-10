@@ -18,12 +18,13 @@ class Game
       gameplay
     else
       print "See you next time!"
-      system.exit
+      system("exit")
     end
   end
 
   def gameplay
-    until wins == 1
+    until wins > 0
+      # require 'pry'; binding.pry
       print "Select a column A - G: "
 
       until @player.flag == 1
@@ -31,20 +32,23 @@ class Game
         valid_input = @player.input_validation(@input)
         @player.place_piece(valid_input) #play X
       end
-      
+
       @player.flag = 0
 
       system("clear")
       print @board.display_board
 
-      check_for_winner
+      # check_for_winner
+      break if check_for_winner == true
       print "computer playing . . . "
       sleep 1.5
 
       computer_input = computer.random_column
-      computer.place_piece(computer_input) # play O
+      computer.place_piece(computer_input) # play 
+      # check_for_winner
       system("clear")
       print @board.display_board
+      check_for_winner
     end
   end
 
@@ -61,17 +65,26 @@ class Game
   def check_grouping(group)
     group.each do |string|
       if string.include?("XXXX")
-        @wins += 1        
+        print "You Win!!!"
+        sleep 1.5
+        @wins += 1   
       elsif string.include?("OOOO") 
+        print "Computer wins!"
+        sleep 1.5
         @wins += 1
       else
-          nil
+        nil
       end
     end
   end
 
   def check_for_winner
     check_grouping(arrays_into_strings(@board.all))
+    if @wins == 1
+      print "game Over"
+      return true
+    end
+    false
   end
 
   def heading
