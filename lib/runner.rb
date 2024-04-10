@@ -3,6 +3,8 @@ require_relative './cell.rb'
 require_relative './computer.rb'
 require_relative './player.rb'
 require_relative './game.rb'
+require_relative './wrapper.rb'
 require 'pry'
 
-game = Game.new.start_game
+Wrapper.new.game_loop
+

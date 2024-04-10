@@ -10,42 +10,39 @@ class Game
     @wins = 0
   end
 
-  def start_game
-    heading
-    if gets.chomp == "Y"
-      system("clear")
-      print @board.display_board
-      gameplay
-    else
-      print "See you next time!"
-      system.exit
-    end
-  end
-
   def gameplay
-    until wins == 1
+    until wins > 0
+      print @board.display_board
       print "Select a column A - G: "
 
-      until @player.flag == 1
-        @input = gets.chomp
-        valid_input = @player.input_validation(@input)
-        @player.place_piece(valid_input) #play X
-      end
-      
+      player_turn
+
       @player.flag = 0
 
       system("clear")
       print @board.display_board
 
-      check_for_winner
+      break if check_for_winner == true
       print "computer playing . . . "
       sleep 1.5
-
-      computer_input = computer.random_column
-      computer.place_piece(computer_input) # play O
+      computer_turn
+      
       system("clear")
-      print @board.display_board
+      check_for_winner
     end
+  end
+
+  def player_turn
+    until @player.flag == 1
+      @input = gets.chomp
+      valid_input = @player.input_validation(@input)
+      @player.place_piece(valid_input) #play X
+    end
+  end
+
+  def computer_turn
+    computer_input = computer.random_column
+    computer.place_piece(computer_input) 
   end
 
   def arrays_into_strings(group_of_arrays)
@@ -61,26 +58,25 @@ class Game
   def check_grouping(group)
     group.each do |string|
       if string.include?("XXXX")
-        @wins += 1        
+        puts "You Win!!!"
+        sleep 1.5
+        @wins += 1   
       elsif string.include?("OOOO") 
+        puts "Computer wins!"
+        sleep 1.5
         @wins += 1
       else
-          nil
+        nil
       end
     end
   end
 
   def check_for_winner
     check_grouping(arrays_into_strings(@board.all))
-  end
-
-  def heading
-    system("clear")
-    print "=================================" + "\n" 
-    print "        Play Connect IV " + "\n" 
-    print "=================================" + "\n"
-    print @board.display_board
-    print "would you like to play?"
-    print "type 'Y' for yes or 'N' for no" + "\n"
+    if @wins == 1
+      puts "-------- game Over --------"
+      return true
+    end
+    false
   end
 end
