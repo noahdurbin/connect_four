@@ -5,4 +5,4 @@ require_relative './player.rb'
 require_relative './game.rb'
 require 'pry'
 
-Game.new.start_game
+game = Game.new.start_game
