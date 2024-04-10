@@ -16,27 +16,27 @@ class Computer
       @board.a_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "B" && computer_check(@board.a_column) == true
+    elsif column == "B" && computer_check(@board.b_column) == true
       @board.b_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "C" && computer_check(@board.a_column) == true
+    elsif column == "C" && computer_check(@board.c_column) == true
       @board.c_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "D" && computer_check(@board.a_column) == true
+    elsif column == "D" && computer_check(@board.d_column) == true
       @board.d_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "E" && computer_check(@board.a_column) == true
+    elsif column == "E" && computer_check(@board.e_column) == true
       @board.e_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "F" && computer_check(@board.a_column) == true
+    elsif column == "F" && computer_check(@board.f_column) == true
       @board.f_column.find do |cell|
         cell.change_state("O")
       end
-    elsif column == "G" && computer_check(@board.a_column) == true
+    elsif column == "G" && computer_check(@board.g_column) == true
       @board.g_column.find do |cell|
         cell.change_state("O")
       end
@@ -49,16 +49,14 @@ class Computer
 
 
   def computer_check(full_column)
-    full_column.map do |column|
-      cell_states = []
-      full_column.each do |cell|
-          cell_states.push(cell.state)
-      end
+    cell_states = []
+    full_column.map do |cell|
+      cell_states.push(cell.state)
+    end
       if cell_states.include?(".")
         return true
       else
         return false
       end
-    end
   end
 end

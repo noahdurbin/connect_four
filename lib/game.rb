@@ -26,12 +26,13 @@ class Game
     until wins == 1
       print "Select a column A - G: "
 
-      # until player.flag == 1
+      until @player.flag == 1
         @input = gets.chomp
         valid_input = @player.input_validation(@input)
         @player.place_piece(valid_input) #play X
-      # end
-
+      end
+      
+      @player.flag = 0
 
       system("clear")
       print @board.display_board
