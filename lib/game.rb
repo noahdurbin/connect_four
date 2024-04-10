@@ -10,21 +10,21 @@ class Game
     @wins = 0
   end
 
-  def start_game
-    heading
-    if gets.chomp == "Y"
-      system("clear")
-      print @board.display_board
-      gameplay
-    else
-      print "See you next time!"
-      system("exit")
-    end
-  end
+  # def start_game
+  #   heading
+  #   if gets.chomp == "Y"
+  #     system("clear")
+  #     print @board.display_board
+  #     gameplay
+  #   else
+  #     print "See you next time!"
+  #     system("exit")
+  #   end
+  # end
 
   def gameplay
     until wins > 0
-      # require 'pry'; binding.pry
+      print @board.display_board
       print "Select a column A - G: "
 
       until @player.flag == 1
@@ -47,7 +47,7 @@ class Game
       computer.place_piece(computer_input) # play 
       # check_for_winner
       system("clear")
-      print @board.display_board
+      # print @board.display_board
       check_for_winner
     end
   end
@@ -65,11 +65,11 @@ class Game
   def check_grouping(group)
     group.each do |string|
       if string.include?("XXXX")
-        print "You Win!!!"
+        puts "You Win!!!"
         sleep 1.5
         @wins += 1   
       elsif string.include?("OOOO") 
-        print "Computer wins!"
+        puts "Computer wins!"
         sleep 1.5
         @wins += 1
       else
@@ -81,7 +81,7 @@ class Game
   def check_for_winner
     check_grouping(arrays_into_strings(@board.all))
     if @wins == 1
-      print "game Over"
+      puts "-------- game Over --------"
       return true
     end
     false
