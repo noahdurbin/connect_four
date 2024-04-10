@@ -46,10 +46,10 @@ class Computer
       @set.delete(column)
     end
   end
-end
 
-def computer_check(full_column)
-  full_column.map do |column|
+
+  def computer_check(full_column)
+    full_column.map do |column|
       cell_states = []
       full_column.each do |cell|
           cell_states.push(cell.state)
@@ -58,6 +58,7 @@ def computer_check(full_column)
         return true
       else
         return false
-  end
+      end
+    end
   end
 end
