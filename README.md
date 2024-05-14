@@ -1,4 +1,5 @@
 # connect_four
+![cover image](Connect 4 Ruby Cover.webp)
 
 ## 1. This project did not provide an interaction pattern. How did you approach the design and problem solving process for this project?
 
